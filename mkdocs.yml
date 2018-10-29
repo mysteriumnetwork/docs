@@ -3,7 +3,9 @@ site_name: Mysterium Network
 theme:
     name: readthedocs
 
-nav:
+# In the newer version of MkDocs 'pages' renamed to 'nav'.
+# But https://readthedocs.org uses 0.17.3 at that moment.
+pages:
     - Home: 'index.md'
     - Architecture:
         - 'Node (high level)': 'architecture/node-high-level.md'
