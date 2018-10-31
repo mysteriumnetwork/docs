@@ -1,0 +1,14 @@
+language: go
+
+branches:
+  only:
+  - master
+
+script:
+  - go run convert/wiki.go
+  - cd docs
+  - git init
+  - git add --all
+  - git commit -m 'Sync wiki'
+  - git remote add upstream https://${TRAVIS_REPO_SLUG%/*}:${GITHUB_API_KEY}@github.com/${TRAVIS_REPO_SLUG}.wiki.git
+  - git push -f -u upstream master
