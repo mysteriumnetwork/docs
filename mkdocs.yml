@@ -6,7 +6,7 @@ theme:
 # In the newer version of MkDocs 'pages' renamed to 'nav'.
 # But https://readthedocs.org uses 0.17.3 at that moment.
 pages:
-    - Home: 'index.md'
+    - Home: 'Home.md'
     - Architecture:
         - 'Node (high level)': 'architecture/node-high-level.md'
         - 'Node (low level)': 'architecture/node-low-level.md'
