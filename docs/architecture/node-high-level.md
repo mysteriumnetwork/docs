@@ -6,35 +6,35 @@ Mysterium network will act as a decentralized marketplace between providers and 
 
 ## Service provider
 
-Any Mysterium network node can become a Service provider and provide VPN services using his own infrastructure. To become a service provider, the following requirements should be done:
+Any Mysterium network node can become a Service provider and provide VPN services using his own infrastructure. To become a service provider, the following steps should be performed:
 * Create personal user identity;
 * Register user identity;
 * Create a service proposal;
 * Register service proposal in the Discovery service.
 
-All Mysterium network nodes should have a valid identity to interact with other systems. `myst` binary provides a way to create a required identity.
+All Mysterium network nodes should have a valid identity to interact with other systems. `myst` binary provides a way to create the required identity.
 
-Once identity created, the user should finish the identity registration process to be able to provide services in the Mysterium network.
+After creating the identity, the user should finish the identity registration process to be able to provide services in the Mysterium network.
 
-Registered identity is used as one of the components for creating a service proposal, that acts as a complete description of the service that Service provider going to provide.
+The registered identity is used as one of the components for creating a service proposal, that acts as a complete description of the service that Service provider is going to provide.
 
 The created proposal should be registered in the service discovery component to allow other network participants to search through all available services and consume it.
 
-At that moment the service provider starts to wait for an incoming request. It handles all valid requests and establishes a new VPN session for the user.
+After successfully registering the proposal, the service provider starts to wait for an incoming request. It handles all valid requests and establishes a new VPN session for the consumer.
 
-The service provider sends to the consumer all required information for establishing VPN session.
+The service provider then sends all the required information for establishing a VPN session to the consumer.
 
 ## Service consumer
 
-The same `myst` binary could be used as a service consumer. The service consumer should have a similar registered identity as a service provider to be able to communicate with it.
+The same `myst` binary could be used as a service consumer. The service consumer must also have a registered identity to be able to communicate with the provider.
 
-Once consumer identity created and registered in the network, a user can request discovery service for the list of available service proposals. The results of this request can be filtered through the discovery API.
+Once the consumer has created and registered an identity in the network, the consumer can request for the list of available service proposals from the discovery service. The results of this request can be filtered through the discovery API.
 
-Service consumer chooses the service proposal that fit his requirements and starts communication dialog to negotiate session creation.
+The service consumer chooses the service proposal that fits his requirements and starts a communication dialog to negotiate session creation.
 
-Service consumer gets from the provider information required for establishing VPN session. It initializes the VPN session creation process.
+The service consumer receives the required information for establishing a VPN session from the provider. It then initializes the VPN session creation process.
 
-When the VPN session established, the service consumer can consume provided services as he needs. And service consumer can close the session any time he wants.
+When the VPN session is established, the service consumer can consume the provided services as he needs. The service consumer can close the session at any time if he wishes to do so.
 
 ## User identity
 
@@ -65,7 +65,7 @@ To announce the service, the provider's node prepares a service proposal.
 
 ### Service proposal
 
-A proposal encodes the proposal format version, provider description, qualitative service definition, and a list of methods to reaching the provider's node.
+A proposal encodes the proposal format version, provider description, qualitative service definition, and a list of methods for reaching the provider's node.
 
 The provider's identity agent then signs this proposal and the node invokes a service announcement to the Discovery API. The proposal becomes publicly available for everyone.
 
@@ -73,7 +73,7 @@ The provider's identity agent then signs this proposal and the node invokes a se
 
 Messaging channels enable nodes to exchange messages.
 
-A dialogue between nodes can be started over any type of messaging channel available to both nodes participating in a dialogue. One default channel type and associated communication protocol are be defined and supported on all Mysterium network clients.
+A dialogue between nodes can be started over any type of messaging channel available to both nodes participating in a dialogue. One default channel type and associated communication protocol are to be defined and supported on all Mysterium network clients.
 
 Each message sent over a channel is signed by the sender and then encrypted.
 
@@ -85,17 +85,17 @@ To start a service session a client must request the creation of a session. The 
 
 After receiving this request, the provider may respond with an acceptance or refusal. In the case that a session opening was refused, a reason of refusal is also supplied. In the case that the opening of a channel is accepted, a session id is supplied and accompanied by application specific data supplied by the provider.
 
-A client should then use application-specific information received from a provider to try to establish a data carrying channel(s) and report back to the node. The client node then sends a message indicating confirmation of the successful opening of a session or failure to open a session to the provider.
+A client should then use the application-specific information received from a provider to try to establish a data carrying channel(s) and report back to the node. The client node then sends a message indicating confirmation of the successful opening of a session or failure to open a session to the provider.
 
 ### Message broker
 
-At that moment Mysterium network uses centralized message broker for communicating between nodes in the network. It allows to send and receive messages from the registered network participants.
+At the moment Mysterium network uses centralized message broker for communicating between nodes in the network. It allows to send and receive messages from the registered network participants.
 
 ## OpenVPN service
 
-In the current implementation VPN session between a service provider and service consumer established using OpenVPN solution.
+In the current implementation the VPN session between a service provider and service consumer is established using OpenVPN solution.
 
-It creates a tunnel between provider and service, that is used for real data transfer.
+It creates a tunnel between the provider and consumer that is used for data transfer.
 
 User IP-address is hidden for his requests through the OpenVPN tunnel. Destination services will only see IP-address of the service provider.
 
@@ -112,6 +112,6 @@ Ethereum allows running decentralized code with smart contracts, enabling reliab
 Identity service and database of registered identities ensures the proper identity
 acknowledgment between service provider and consumer.
 
-All processes in the Mysterium network, like payments and identity registration, done through the Ethereum blockchain smart contracts.
+All processes in the Mysterium network, like payments and identity registration are done through the Ethereum blockchain smart contracts.
 
-Any participant in the Mysterium network have access to the information stored in the blockchain.
+Any participant in the Mysterium network has access to the information stored in the blockchain.
