@@ -1,0 +1,25 @@
+site_name: Mysterium Network
+
+theme:
+    name: readthedocs
+
+# In the newer version of MkDocs 'pages' renamed to 'nav'.
+# But https://readthedocs.org uses 0.17.3 at that moment.
+pages:
+    - Home: 'index.md'
+    - Architecture:
+        - 'Node (high level)': 'architecture/node-high-level.md'
+        - 'Node (low level)': 'architecture/node-low-level.md'
+        - 'Payments': 'architecture/payments.md'
+    - User Guide:
+        - 'Installation and running': 'user-guide/installation.md'
+        - 'FAQ': 'user-guide/faq.md'
+        - 'Troubleshooting': 'user-guide/troubleshooting.md'
+        - 'Links': 'user-guide/links.md'
+    - About:
+        - 'Authors': 'about/authors.md'
+        - 'License': 'about/license.md'
+        - 'Terms and conditions': 'about/terms-and-conditions.md'
+        - 'Contributing': 'about/contributing.md'
+        - 'Release Notes': 'about/release-notes.md'
+        - 'Changelog': 'about/changelog.md'
