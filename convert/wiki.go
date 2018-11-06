@@ -37,6 +37,8 @@ type Pages struct {
 var (
 	input  = flag.String("input", "mkdocs.yml", "input file name")
 	output = flag.String("output", "docs/_Sidebar.md", "output file name")
+
+	index = flag.String("index", "docs/index.md", "index file name")
 )
 
 func init() {
@@ -44,6 +46,10 @@ func init() {
 }
 
 func main() {
+	if err := os.Rename(*index, filepath.Join(filepath.Dir(*index), "Home.md")); err != nil {
+		log.Fatalf("cannot rename index file: %v", err)
+	}
+
 	data, err := ioutil.ReadFile(*input)
 	if err != nil {
 		log.Fatalf("cannot read file: %v", err)
@@ -65,7 +71,8 @@ func main() {
 
 			switch link.Kind() {
 			case reflect.String:
-				fmt.Fprintf(f, "**[%s](%s)**\n", v.Key, trimLink(v.Value))
+				path := strings.Replace(trimLink(v.Value), "index", "Home", 1)
+				fmt.Fprintf(f, "**[%s](%s)**\n", v.Key, path)
 
 			case reflect.Slice:
 				fmt.Fprintf(f, "\n<details><summary><a href=#><b>%s</b></a></summary>\n\n", v.Key)
