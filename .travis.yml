@@ -4,6 +4,7 @@ branches:
   only:
   - master
 
+
 script:
   - go run convert/wiki.go
   - cd docs
