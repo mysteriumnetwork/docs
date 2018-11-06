@@ -16,6 +16,7 @@ pages:
         - 'FAQ': 'user-guide/faq.md'
         - 'Troubleshooting': 'user-guide/troubleshooting.md'
         - 'Links': 'user-guide/links.md'
+        - 'Glossary': 'user-guide/glossary.md'
     - About:
         - 'Authors': 'about/authors.md'
         - 'License': 'about/license.md'
