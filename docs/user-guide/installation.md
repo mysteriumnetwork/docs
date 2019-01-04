@@ -7,7 +7,7 @@ Ensure that You have the latest version:
 
 Run node with VPN service on port 1194
 ```shell
-# docker run --cap-add NET_ADMIN --net host --publish "1194:1194/udp" --name myst --rm mysteriumnetwork/myst service --agreed-terms-and-conditions
+# docker run --cap-add NET_ADMIN --net host --name myst --rm mysteriumnetwork/myst service --agreed-terms-and-conditions
 ```
 
 **Note1.**
