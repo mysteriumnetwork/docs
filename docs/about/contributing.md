@@ -184,6 +184,11 @@ Besides it, we have our own list of practices that are highly desired in all our
 
 This is one of the well known Golang recommendations but we think that it worth to be mentioned specifically since we had a number of issues with not following this rule.
 
+#### The consumer should define the interface
+
+It's always good to define required interfaces on the caller side, not with implementation.
+https://twitter.com/davecheney/status/942593128355192832
+
 #### Error handling
 
 Dave Cheney did a great description of error handling, and we recommend to follow it:
