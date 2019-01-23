@@ -165,3 +165,34 @@ bin/test_e2e
 After you forked a project, modified sources and run tests, you can create a pull request using this procedure:
 
  https://help.github.com/articles/creating-a-pull-request-from-a-fork/
+
+## Style guide
+
+### Golang
+
+We highly respect all common Golang recommendations and trying to follow it every time.
+
+There is no need to duplicate all of them here but you can always refer it from the following links:
+
+ - https://golang.org/doc/effective_go.html
+ - https://github.com/golang/go/wiki/CodeReviewComments
+ - https://go-proverbs.github.io/
+
+Besides it, we have our own list of practices that are highly desired in all our Golang projects.
+
+#### Accept interfaces; return concrete types
+
+This is one of the well known Golang recommendations but we think that it worth to be mentioned specifically since we had a number of issues with not following this rule.
+
+#### Error handling
+
+Dave Cheney did a great description of error handling, and we recommend to follow it:
+https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully
+
+Besides it, we experienced a lot of different approaches to error handling and finally developed some rules that fit best to our projects:
+
+1) Never ignore returned errors;
+1) Add annotation to the error if it will help to describe context better;
+   - https://godoc.org/github.com/pkg/errors#Wrap is a great tool for annotation error.
+1) `errors.New("")` is more preferred than `fmt.Errorf("")`;
+1) `github.com/pkg/errors` is more preferred than `golang.org/pkg/errors/` from standard library since it gives you more context about errors if you need it.
