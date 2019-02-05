@@ -26,11 +26,11 @@ You can follow the [Carthage quick start guide](https://github.com/Carthage/Cart
 
 ## Android
 
-We are publishing an Android SDK library to the [Bintray](https://bintray.com/) repository. And as a result, it is available via [JCenter](https://bintray.com/bintray/jcenter) repository and can be easily imported into your project.
+We are publishing an Android SDK library to the Sonatype and Maven Central repositories. And as a result, it is available via [search.maven.org](https://search.maven.org/search?q=g:network.mysterium) repository and can be easily imported into your project.
 
-The Android SDK library available at [https://bintray.com/mysterium/Node/mobile-node](https://bintray.com/mysterium/Node/mobile-node)
+The Android SDK library available at [https://search.maven.org/search?q=g:network.mysterium](https://search.maven.org/search?q=g:network.mysterium)
 
-All you need to do is just add the following line to your `build.gradle` file and resync it: `implementation 'mysterium.network:mobile-node:0.5-rc'`
+All you need to do is just add the following line to your `build.gradle` file and resync it: `implementation 'network.mysterium:mobile-node:0.5.1'`
 
 ---
 
