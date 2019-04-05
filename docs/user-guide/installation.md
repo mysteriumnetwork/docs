@@ -40,3 +40,42 @@ It is suggested to run a node on a decent network connection to give VPN users b
 ## What OpenVPN version is required?
 
 If You compiled a node or client on Your own, check that OpenVPN version on Your system is >= 2.4.4
+
+## Router configuration for nodes behind NAT
+
+NAT (Network Address Translation) is used to enable internet access for
+computers that do not have an external internet address (IP). Usually of the form like 
+192.168.x.y or 10.x.y.z
+ 
+If you are running a node on a computer behind NAT you will need some means to 
+enable access to your node from outside your local network. Below are suggested 
+methods to enable such external access. 
+
+Essentially you need to make ports on which node services run accessible from outside.
+Such enablement is also called "_port forwarding_".
+
+### Enable UPnP or NAT-PNP support
+
+UPnP and NAT-PNP protocols provides automatic port configuration features for various routers (gateways).
+Some routers have these features enabled by default, some have not. Below are some examples how to enable such features.
+
+#### Mikrotik (RouterOS) 
+
+Enable UPnP: IP -> UPnP -> Enable
+![image](upnp/mikrotik_upnp.png)
+
+Enable UPnP interfaces: IP -> UPnP -> Interfaces
+![image](upnp/mikrotik_upnp_interfaces.png)
+
+#### ZTE MF286  
+
+Enable UPnP: Advanced settings
+![image](upnp/zte_advanced.png)
+
+![image](upnp/zte_upnp.png)
+
+### TP-LINK AC1750
+
+Enable UPnP: Advanced -> UPnP 
+![image](upnp/tplink_upnp.png)
+
