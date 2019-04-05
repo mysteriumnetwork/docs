@@ -74,7 +74,7 @@ Enable UPnP: Advanced settings
 
 ![image](upnp/zte_upnp.png)
 
-### TP-LINK AC1750
+#### TP-LINK AC1750
 
 Enable UPnP: Advanced -> UPnP 
 ![image](upnp/tplink_upnp.png)
