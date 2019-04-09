@@ -42,7 +42,7 @@ Go to [docker](https://www.docker.com/) on how to get a recent docker version fo
 
 ### Running
 ```bash
-sudo docker run --cap-add NET_ADMIN --net host --name myst -d mysteriumnetwork/myst service --agreed-terms-and-conditions
+sudo docker run --cap-add NET_ADMIN --net host --name myst -d mysteriumnetwork/myst service --agreed-terms-and-conditions --openvpn.port 1194
 ```
 
 ### Debugging

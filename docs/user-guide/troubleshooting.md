@@ -41,7 +41,7 @@ It means that node successfully registered to discovery and its service proposal
 
 ## In logs I see client's attempts, but it does not fully connect
 
-There might be many things, but most frequent is firewall. If You run node via docker image, check that _ip_forwarding_ is enabled on a host and that UDP service port (1194 by default) is allowed from outside.
+There might be many things, but most frequent is firewall. If You run node via docker image, check that _ip_forwarding_ is enabled on a host and that UDP service port (specified by `--openvpn.port` flag) is allowed from outside.
 
 check ip_forward status:
 ```shell
