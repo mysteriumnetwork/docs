@@ -6,8 +6,14 @@ Ensure that You have the latest version:
 ```
 
 Run node with VPN service on port 1194
-```shell
-# docker run --cap-add NET_ADMIN --net host --name myst --rm mysteriumnetwork/myst service --agreed-terms-and-conditions
+```
+# docker run \
+    --cap-add NET_ADMIN \
+    --net host \
+    --name myst \
+    --rm mysteriumnetwork/myst service \
+    --openvpn.port 1194 \
+    --agreed-terms-and-conditions
 ```
 
 **Note1.**
