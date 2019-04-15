@@ -39,9 +39,9 @@ Installation of the Mysterium node was tested on the Raspbian operation system, 
 
 Download and install a Raspbian image [https://www.raspberrypi.org/downloads/](https://www.raspberrypi.org/downloads/) to the SD card as described in the official Raspberry Pi documentation [https://www.raspberrypi.org/documentation/installation/installing-images/](https://www.raspberrypi.org/documentation/installation/installing-images/).
 
-Once you have an installed operating system, make sure that you have an Internet connection, since the Mysterium Node requires it to be running. Both wired and wireless connection supported, but the wired connection should give a more stable and performant connection.
+Once you have an installed operating system, make sure that you have an Internet connection, since the Mysterium Node requires it to run. Both wired and wireless connections are supported, but the wired connection should give a more stable and performant connection.
 
-To support running a Wireguard service it's required to install it separately. Here is a description of how it can be installed: [https://github.com/adrianmihalko/raspberrypiwireguard](https://github.com/adrianmihalko/raspberrypiwireguard).
+To run a Wireguard service you'll need to install Wireguard separately. Here is a description of how it can be installed: [https://github.com/adrianmihalko/raspberrypiwireguard](https://github.com/adrianmihalko/raspberrypiwireguard).
 
 There are two possible ways to install the Mysterium node on Raspbian. Building it from source code or use a prebuilt binary DEB package.
 
