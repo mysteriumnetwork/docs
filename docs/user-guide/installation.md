@@ -157,4 +157,4 @@ A summary of the steps to setup a port forward in your router are:
 3. Create the port forward entries in your router.
 4. Test that your ports are forwarded correctly.
 
-https://www.pcworld.com/article/244314/how_to_forward_ports_on_your_router.html 
+[https://www.pcworld.com/article/244314/how_to_forward_ports_on_your_router.html](https://www.pcworld.com/article/244314/how_to_forward_ports_on_your_router.html)
