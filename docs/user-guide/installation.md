@@ -34,7 +34,30 @@ E.g. My publicly visible ip is [78.X.Y.Z] and my laptop's local ip [192.168.1.10
 
 Mysterium node supports running a service on ARM architecture. As an example of such installation, it can be installed and running on the Raspberry Pi 3 Model B+.
 
-### Preinstallation requirements
+### Using prebuilt image for running Mysterium node
+
+We are providing Raspberry Pi images with pre-installed Mysterium node.
+
+It's the easiest way to start a Mysterium node on Raspberry Pi.
+
+The installation process is well described in the official Raspberry Pi documentation:
+[https://www.raspberrypi.org/documentation/installation/installing-images/](https://www.raspberrypi.org/documentation/installation/installing-images/)
+
+You just need to use a Mysterium image for it:
+
+1. Download the image from the [release page](https://github.com/mysteriumnetwork/node/releases):
+    * `mystberry.zip`
+2. Writing an image to the SD card:
+    * [Linux](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
+    * [MacOS](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
+    * [Windows](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md)
+    * [Chrome OS](https://www.raspberrypi.org/documentation/installation/installing-images/chromeos.md)
+3. Install the SD card, connect Ethernet cable and power source;
+4. Connect to the Raspberry Pi using SSH with login `myst` and password `mystberry`;
+5. Change the default password to your own to prevent unauthorized users from accessing it:
+    * `passwd`
+
+### Preinstallation requirements for manual installation
 Installation of the Mysterium node was tested on the Raspbian operation system, but most of the other systems should be supported too.
 
 Download and install a Raspbian image [https://www.raspberrypi.org/downloads/](https://www.raspberrypi.org/downloads/) to the SD card as described in the official Raspberry Pi documentation [https://www.raspberrypi.org/documentation/installation/installing-images/](https://www.raspberrypi.org/documentation/installation/installing-images/).
