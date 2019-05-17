@@ -12,44 +12,24 @@ You can check details using the following command:
 sudo systemctl status mysterium-node.service
 ```
 
-Systemd unit file, that describes service is located at the: `/lib/systemd/system/mysterium-node.service`.
-
-It should look similar to the following:
+You can change the configuration of the service via `/etc/default/mysterium-node` file:
 
 ```
-[Unit]
-Description=Server for decentralised VPN built on blockchain
-Documentation=https://mysterium.network/
-After=network-online.target
-
-[Service]
-User=mysterium-node
-Group=mysterium-node
-
-RuntimeDirectory=mysterium-node
-RuntimeDirectoryMode=0750
-LogsDirectory=mysterium-node
-
-EnvironmentFile=-/etc/default/mysterium-node
-ExecStart=/usr/bin/myst $CONF_DIR $RUN_DIR $DISCOVERY $BROKER $PROTO service --agreed-terms-and-conditions
-KillMode=process
-TimeoutStopSec=10
-SendSIGKILL=yes
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
+root@raspberrypi:~# cat /etc/default/mysterium-node
+# Define additional args for `myst` service (see `myst --help` for full list)
+CONF_DIR="--config-dir=/etc/mysterium-node"
+RUN_DIR="--runtime-dir=/var/run/mysterium-node"
+DATA_DIR="--data-dir=/var/lib/mysterium-node"
+DAEMON_OPTS="--tequilapi.address=0.0.0.0"
+SERVICE_OPTS="openvpn"
 ```
-
-The line starting with an `ExecStart=` describes how the process starts.
-You can change the line to configure the service by your need.
 
 List of available options can be found using a help commands: `myst --help` or `myst service --help`.
 
-For example, if you want to start only OpenVPN service on 1190 port and serve Mysterium verified consumer only, change the `ExecStart=` line to the following:
+For example, if you want to start only OpenVPN service on 1190 port and serve Mysterium verified consumer only, change the `SERVICE_OPTS=` line to the following:
 
 ```
-ExecStart=/usr/bin/myst $CONF_DIR $RUN_DIR $DISCOVERY $BROKER $PROTO service openvpn --openvpn.port=1190 --access-policy.list mysterium --agreed-terms-and-conditions
+SERVICE_OPTS="openvpn --openvpn.port=1190 --access-policy.list mysterium"
 ```
 
 To apply the changed service configuration you will need to re-read configuration and restart it.
