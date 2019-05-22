@@ -13,6 +13,7 @@ pages:
         - 'Payments': 'architecture/payments.md'
     - User Guide:
         - 'Installation and running': 'user-guide/installation.md'
+        - 'Post install node configuration': 'user-guide/postinstall.md'
         - 'Mobile SDK': 'user-guide/mobile-sdk.md'
         - 'FAQ': 'user-guide/faq.md'
         - 'Troubleshooting': 'user-guide/troubleshooting.md'
