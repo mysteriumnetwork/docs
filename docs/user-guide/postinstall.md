@@ -124,3 +124,80 @@ To get a detailed log for Mysterium node service, you can use the following comm
 ```
 sudo journalctl -u mysterium-node.service
 ```
+
+## Built-in UI and Node LAN discovery
+
+It is possible to start a Mysterium node with a built-in UI server to do the basic configuration.
+
+The `--ui.enable` flag should be used to start a node with built-in UI.
+
+Default port for built-in UI server is `:4449`, and to get access to it you need to open [http://<mysterium-node-ip>:4449](http://<mysterium-node-ip>:4449).
+
+There are several ways to discover a Mysterium Node IP-address.
+
+### Locally hosted Mysterium Node
+
+If you are running a Mysterium node on the same machine that will be used for accessing UI you just need to use the following address:
+
+[http://localhost:4449/](http://localhost:4449/)
+
+### Using a Windows system for accessing Mysterium Node with UI
+
+SSDP based protocol is used for Mysterium Node discovery on Windows systems. Once you have a Mysterium Node with enabled UI running in your local network, it will be possible to see it automatically in the Network section of the Windows Explorer:
+
+![image](discovery/discovery.jpeg)
+
+You just need to double click on the device icon to open the UI in the default browser.
+
+### Using a Mac OS system for accessing Mysterium Node with UI
+
+Mac OS uses a Bonjour technology for automatic service discovery.
+
+Mysterium Node with enabled UI will announce Bonjour service to all hosts within the LAN.
+
+To access a Mysterium Node UI you can open in browser link similar to following:
+
+[http://<hostname>.:4449](http://<hostname>.:4449)
+
+`hostname` here is a hostname of the Mysterium Node. For example, if you are running a Raspberry Pi Mysterium Node with a default hostname you can use the following link:
+
+[http://raspberrypi.:4449](http://raspberrypi.:4449)
+
+If you need to run a multiple Mysterium Nodes in the same LAN make sure that you changed a hostname to the unique value.
+
+Also, you can use the following command to list the available Mysterium Nodes in the terminal:
+
+`dns-sd -L "Mysterium Node" _mysterium-node._tcp`
+
+The output should look like this:
+
+```
+Lookup Mysterium Node._mysterium-node._tcp.local
+DATE: ---Mon 10 Jun 2019---
+10:46:31.313  ...STARTING...
+10:46:37.849  Mysterium\032Node._mysterium-node._tcp.local. can be reached at MBP-Dmitry.lan.:4449 (interface 8)
+```
+
+`MBP-Dmitry.lan.:4449` here is a hostname with a port that can be used for accessing a Mysterium Node UI on the `MBP-Dmitry.lan` host.
+
+### Using a Linux system for accessing Mysterium Node with UI
+
+The similar to Mac OS Linux can automatically use Bonjour discovery to access a Mysterium Node UI.
+
+[http://<hostname>.:4449](http://<hostname>.:4449)
+
+[http://raspberrypi.:4449](http://raspberrypi.:4449) - is a default domain for Raspberry Pi.
+
+If you need some extra tools for listing available Mysterium Nodes you can use an `avahi-utils` for it:
+
+`apt install avahi-utils`
+
+```
+root@raspberrypi:~# avahi-browse -r _mysterium-node._tcp
++   eth0 IPv4 Mysterium Node                                _mysterium-node._tcp local
+=   eth0 IPv4 Mysterium Node                                _mysterium-node._tcp local
+   hostname = [MBP-Dmitry.lan]
+   address = [192.168.1.229]
+   port = [4449]
+   txt = []
+```
