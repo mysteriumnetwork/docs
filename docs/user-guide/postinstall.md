@@ -127,9 +127,15 @@ sudo journalctl -u mysterium-node.service
 
 ## Built-in UI and Node LAN discovery
 
-It is possible to start a Mysterium node with a built-in UI server to do the basic configuration.
+A Mysterium node starts with a built-in UI server and allows to do the basic configuration.
 
-The `--ui.enable` flag should be used to start a node with built-in UI.
+It uses basic authentication to prevent unauthorized access to the Mysterium node configuration.
+
+Default credentials for built-in UI:
+ - login: `myst`
+ - password: `mystberry`
+
+These credentials can be changed using a built-in UI.
 
 Default port for built-in UI server is `:4449`, and to get access to it you need to open [http://<mysterium-node-ip>:4449](http://<mysterium-node-ip>:4449).
 
@@ -148,6 +154,8 @@ SSDP based protocol is used for Mysterium Node discovery on Windows systems. Onc
 ![image](discovery/discovery.jpeg)
 
 You just need to double click on the device icon to open the UI in the default browser.
+
+> Note: Network discovery should be enabled in your Windows.
 
 ### Using a Mac OS system for accessing Mysterium Node with UI
 
