@@ -165,11 +165,11 @@ Mysterium Node with enabled UI will announce Bonjour service to all hosts within
 
 To access a Mysterium Node UI you can open in browser link similar to following:
 
-[http://<hostname>.:4449](http://<hostname>.:4449)
+[http://<hostname>:4449](http://<hostname>:4449)
 
 `hostname` here is a hostname of the Mysterium Node. For example, if you are running a Raspberry Pi Mysterium Node with a default hostname you can use the following link:
 
-[http://raspberrypi.:4449](http://raspberrypi.:4449)
+[http://raspberrypi.local:4449](http://raspberrypi.local:4449)
 
 If you need to run a multiple Mysterium Nodes in the same LAN make sure that you changed a hostname to the unique value.
 
@@ -192,9 +192,9 @@ DATE: ---Mon 10 Jun 2019---
 
 The similar to Mac OS Linux can automatically use Bonjour discovery to access a Mysterium Node UI.
 
-[http://<hostname>.:4449](http://<hostname>.:4449)
+[http://<hostname>:4449](http://<hostname>:4449)
 
-[http://raspberrypi.:4449](http://raspberrypi.:4449) - is a default domain for Raspberry Pi.
+[http://raspberrypi.local:4449](http://raspberrypi.local:4449) - is a default domain for Raspberry Pi.
 
 If you need some extra tools for listing available Mysterium Nodes you can use an `avahi-utils` for it:
 
