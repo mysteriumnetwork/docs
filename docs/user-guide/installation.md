@@ -89,6 +89,16 @@ There are two possible ways to install the Mysterium node on Raspbian. Building 
 
 And it should be ready to serve consumers.
 
+#### Installing a Mysterium node using install script
+
+Ubuntu / Debian / Raspbian distributions can use following installation command: 
+
+```
+sudo -E bash -c "$(curl -s https://raw.githubusercontent.com/mysteriumnetwork/node/master/install.sh)" 
+```
+
+It installs latest stable node release.
+
 #### Installing a Mysterium node using prebuilt DEB package
 
 Prebuilt DEP packages available for downloading from the Mysterium node repository release page [https://github.com/mysteriumnetwork/node/releases](https://github.com/mysteriumnetwork/node/releases)
