@@ -24,5 +24,4 @@ pages:
         - 'License': 'about/license.md'
         - 'Terms and conditions': 'about/terms-and-conditions.md'
         - 'Contributing': 'about/contributing.md'
-        - 'Release Notes': 'about/release-notes.md'
         - 'Changelog': 'about/changelog.md'
