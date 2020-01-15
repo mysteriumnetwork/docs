@@ -1,15 +1,17 @@
 # Mysterium Network documentation
 
-This repository should be used with a [MkDocs](https://www.mkdocs.org/#installation) tool for building documentation.
+This repository contains the website configuration and documentation powering [Mysterium Network docs website](http://docs.mysterium.network)
 
-## Installation
+## Prerequisites
 
-Process of installing MkDocs described [here](https://www.mkdocs.org/#installation) in details.
+1. [MkDocs](https://www.mkdocs.org/#installation)
+    ```bash
+    # macOS (homebrew)
+    brew install mkdocs
+    ```  
 
-## Running documentation locally
-
-To ensure that everything works correctly you can start simple service locally:
+### Running documentation locally
 
 ```bash
-$ mkdocs serve
+mkdocs serve
 ```
