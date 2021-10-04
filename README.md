@@ -1,4 +1,5 @@
 # Mysterium Network documentation
+[DEPRECATED!] Please use this one instead: https://github.com/mysteriumnetwork/documentation
 
 This repository contains the website configuration and documentation powering [Mysterium Network docs website](http://docs.mysterium.network)
 
